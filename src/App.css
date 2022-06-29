@@ -1,38 +1,294 @@
-.App {
-  text-align: center;
+* {
+   padding: 0;
+   margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+   background-color: rgb(59, 128, 164);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.gradient-text {
+  color: rgb(163, 181, 118);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.gradient-text2 {
+   color: rgb(210, 204, 204);
 }
 
-.App-link {
-  color: #61dafb;
+.textCross {
+   text-decoration: line-through;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ** i tag ** */
+
+i {
+   cursor: alias;
+}
+
+.toDoInput i {
+   font-size: large;
+   color: rgb(84, 84, 84);
+}
+
+.container i {
+   font-size: larger;
+   margin-top: .16rem;
+}
+
+.container .toDo .bin i {
+   color: rgb(69, 69, 69);
+}
+
+.container .toDo .close i {
+   color: brown;
+}
+
+.container .toDo .tick i {
+   color: rgb(1, 244, 106);
+}
+
+.container .toDo .recycle i {
+   color: rgb(46, 75, 164);
+}
+
+/* ** Headings ** */
+
+.mainHeading {
+   text-align: center;
+   margin-top: 2rem;
+   color: white;
+}
+
+.subHeading {
+   text-align: center;
+   color: white;
+}
+
+/* ** ToDO Input ** */
+
+.toDoInput {
+   width: 30%;
+   height: 3.5rem;
+   background-color: rgb(255, 255, 255);
+   box-shadow: 0 0 2px 1px rgb(255, 255, 255);
+   margin: auto;
+   margin-top: 1rem;
+   border-radius: .25rem;
+   display: grid;
+   grid-template-columns: 84% 8% 8%;
+}
+
+.toDoInput .left input {
+   width: 98%;
+   height: 90%;
+   margin-top: .8%;
+   margin-left: 1%;
+   border: unset;
+   border-radius: .25rem;
+   outline: none;
+   padding-left: .3rem;
+   font-size: x-large;
+   font-family: inherit;
+   font-weight: bold;
+}
+
+.toDoInput .right {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.toDoInput .rightEnd {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* ** Container ** */
+
+.container {
+   height: 100%;
+   width: 30%;
+   float: left;
+   margin-top: 2.5%;
+   margin-left: 2.5%;
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   border-radius: .25rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.container .toDo {
+   width: 92%;
+   height: 100%;
+   background-color: rgb(241, 241, 241, 0.2);
+   margin-top: .5rem;
+   padding: 5px;
+   border-radius: .25rem;
+   transition: width 200ms;
+}
+
+.container .toDo:hover {
+   background-color: rgba(241, 241, 241, 0.313);
+   width: 95%;
+}
+
+.container .toDo .top p {
+   word-wrap: break-word;
+   text-align: justify;
+   font-size: large;
+   font-weight: 700;
+   cursor: default;
+}
+
+.container .toDo .bottom p {
+   font-size: small;
+   cursor: default;
+}
+
+/* ** Container Completed ** */
+
+.container.done {
+   background-color: rgb(21, 196, 97);
+   box-shadow: 0 0 2px 2px seagreen;
+}
+
+.container.done .toDo {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-template-rows: auto auto;
+}
+
+.container.done .toDo .top {
+   width: 25.5vw;
+}
+
+.container.done .toDo .left {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+.container.done .toDo .right {
+   grid-column-start: 3;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+/* ** Container Progressing ** */
+
+.container.onGoing {
+   background-color: rgb(209, 158, 28);
+   box-shadow: 0 0 2px 2px darkgoldenrod;
+}
+
+.container.onGoing .toDo {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-template-rows: auto auto;
+}
+
+.container.onGoing .toDo .top {
+   width: 24vw;
+}
+
+.container.onGoing .toDo .left {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+.container.onGoing .toDo .right {
+   grid-column-start: 3;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+/* ** Container Dropped ** */
+
+.container.dropped {
+   background-color: rgb(206, 46, 46);
+   box-shadow: 0 0 2px 2px brown;
+}
+
+.container.dropped .toDo {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   grid-template-rows: auto auto;
+}
+
+.container.dropped .toDo .top {
+   width: 23.5vw;
+}
+
+.container.dropped .toDo .left {
+   grid-column-start: 1;
+   grid-column-end: 2;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+.container.dropped .toDo .right {
+   grid-column-start: 3;
+   grid-column-end: 4;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+
+/* ** media queries for setting width of 'toDo' between 950px and 430px display ** */
+
+@media only screen and (max-width:950px) and (min-width:430px) {
+   .container.done .toDo .top {
+      width: 23vw;
+   }
+   .container.onGoing .toDo .top {
+      width: 18.5vw;
+      margin-left: 1vw;
+   }
+   .container.onGoing .toDo .bottom {
+      width: 18.5vw;
+      margin-left: 1vw;
+   }
+   .container.dropped .toDo .top {
+      width: 19vw;
+      margin-left: 1vw;
+   }
+   .container.dropped .toDo .bottom {
+      margin-left: 1vw;
+   }
+}
+
+/* ** media queries for setting width of 'toDoInput' below 800px display ** */
+
+@media only screen and (max-width:800px) {
+   .toDoInput {
+      width: 95%;
+   }
+}
+
+/* ** media queries for setting width of 'container, toDo' below 430px display ** */
+
+@media only screen and (max-width:430px) {
+   .container {
+      width: 94.82%;
+   }
+   .toDoInput .left input {
+      width: 92%;
+   }
+   .container.done .toDo .top {
+      width: 80vw;
+   }
+   .container.onGoing .toDo .top {
+      width: 70vw;
+   }
+   .container.dropped .toDo .top {
+      width: 70vw;
+   }
 }
