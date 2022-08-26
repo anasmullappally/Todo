@@ -22,7 +22,7 @@ body {
 /* ** i tag ** */
 
 i {
-   cursor: alias;
+   cursor: auto;
 }
 
 .toDoInput i {
